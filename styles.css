@@ -1,0 +1,228 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(235, 234, 239);
+    color: #333;
+    /* Add padding to account for the fixed header */
+    padding-top: 70px;
+}
+
+/* Header Styles - Fixed Position */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgb(116, 84, 245);
+    color: white;
+    /* Fixed positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensures header stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds subtle shadow for depth */
+}
+
+.left-side h1 {
+    font-size: 2.5rem;
+}
+
+.right-side nav ul {
+    list-style-type: none;
+    display: flex;
+    color: rgb(255, 255, 255);
+}
+
+.right-side nav ul li {
+    margin: 0 20px;
+}
+
+.right-side nav ul li a {
+    color: rgb(224, 226, 234);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.right-side nav ul li a:hover {
+    color: rgb(116, 84, 245);
+}
+
+/* Section Styles */
+section {
+    padding: 2rem;
+    margin: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(116, 84, 245);
+    border-bottom: 2px solid rgb(116, 84, 245);
+    padding-bottom: 10px;
+}
+
+section h3 {
+    color: #333;
+    margin: 20px 0 10px 0;
+    font-size: 1.5rem;
+}
+
+/* About Section Styles */
+.bio p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.grades table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+.grades th,
+.grades td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.grades th {
+    background-color: rgb(116, 84, 245);
+    color: white;
+}
+
+.grades tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hobbies Section Styles */
+#hobbies ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    
+}
+
+#hobbies li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.photo-grid1 img {
+    width: 500px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.photo-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Smooth Scrolling for Anchor Links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Anchor Link Adjustment */
+section[id] {
+    scroll-margin-top: 80px; /* Adjusts where the scroll stops with fixed header */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding-top: 140px; /* Increased to account for stacked header elements */
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+    }
+
+    .right-side nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .right-side nav ul li {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    section[id] {
+        scroll-margin-top: 150px; /* Increased for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 170px; /* Further increased for smaller screens */
+    }
+    
+    .left-side h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+}
